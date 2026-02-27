@@ -19,6 +19,7 @@
       height: 100%;
       margin: 0;
     }
+
     body{
       display: flex;
       flex-direction: column;
@@ -32,7 +33,33 @@
     }
 
     header, footer{
-      padding: 1em;
+      display:flex;
+      flex-direction: column;
+      min-height: 100px;
+    }
+
+    .site-main{
+      flex-grow: 1;
+    }
+
+    button{
+      width: 125px;
+      height: 75px;
+      margin: 1em;
+    }
+    
+    button:hover{
+      background-color: #e0e0e0;
+    }
+
+    button:active{
+      background-color: #c0c0c0;
+    }
+
+    button#login{
+      width: 75px;
+      height: 45px;
+      margin: 1em;
     }
 
     div#Long, #Many, #Password, #See, #Saved, #Filter, #Access{
@@ -93,85 +120,72 @@
             <button class="nav-link active"><a class="text-black" href="#">FAQ</a></button>
           </li>
         </ul>
-        <button class="nav-item">Login</button>
+        <button id="login" class="nav-item">Login</button>
       </div>
     </nav>
   </div>
 
-  <div class="container-fluid">
-    <div class="Question" id="Long">How long does the survey take?
-      <ul class="FAQ">
-        <li>The survey typically takes about 5-10 minutes to complete. Once you finish, you will get a wide variety of recommendations personalized for you.</li>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "Many">How many recommendation options are there?
-      <ul class="FAQ">
-        <li>There are about 20 counseling recommendations available based on your survey responses.</li>
+  <div class="site-main container-fluid">
+      <h1 class="text-center">Frequently Asked Questions</h1>
+      <p class="text-center">Here are some of the most frequently asked questions about the counselor recommendation survey. Click on a question to see the answer.</p>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "Password">How do I reset my password?
-      <ul class="FAQ">
-        <li>To reset your password, please go to the password reset page. From there, enter your email and the password you wish to change it to. Once your receive the email you can confirm your password there.</li>
+      <div class="Question" id="Long">How long does the survey take?
+        <ul class="FAQ">
+          <li>The survey typically takes about 5-10 minutes to complete. Once you finish, you will get a wide variety of recommendations personalized for you.</li>
+        </ul>
+      </div><br>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "Saved">Can I save my recommendations?
-      <ul class="FAQ">
-        <li><strong>Yes</strong>, you can save your recommendations for future reference. This allows you to easily access and review them at any time.</li>
+      <div class="Question" id = "Many">How many recommendation options are there?
+        <ul class="FAQ">
+          <li>There are about 20 counseling recommendations available based on your survey responses.</li>
+        </ul>
+      </div><br>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "See">Who can see my saved recommendations?
-      <ul class="FAQ">
-        <li>Your saved recommendations can be viewed by you, your parents, and your counselor.</li>
+      <div class="Question" id = "Password">Do I need a password to access the survey?
+        <ul class="FAQ">
+          <li>No, you do not need a password to access the survey. You can access it directly from the main page.</li>
+        </ul>
+      </div><br>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "Filter">Can I filter out options I don't want?
-      <ul class="FAQ">
-        <li><strong>Yes</strong>, you are able to filter out options you are not interested in by finding the filter button and entering your preferences.</li>
+      <div class="Question" id = "Saved">Can I save my recommendations?
+        <ul class="FAQ">
+          <li><strong>Yes</strong>, you can save your recommendations for future reference. This allows you to easily access and review them at any time.</li>
+        </ul>
+      </div><br>
 
-      </ul>
-    </div><br>
-    <div class="Question" id = "Access">How do I access my counselor?
-      <ul class="FAQ">
-        <li>You can either click the link at the bottom of this page or click this link: <a class="text-black" href="https://sites.google.com/ftcsc.org/fchs-course-guide-2026-2027/fchs-general-information">Counselors</a>.</li>
+      <div class="Question" id = "See">Who can see my saved recommendations?
+        <ul class="FAQ">
+          <li>Your saved recommendations can be viewed by you, your parents, and your counselor.</li>
+        </ul>
+      </div><br>
 
-      </ul>
-    </div><br>
+      <div class="Question" id = "Filter">Can I filter out options I don't want?
+        <ul class="FAQ">
+          <li><strong>Yes</strong>, you are able to filter out options you are not interested in by finding the filter button and entering your preferences.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Access">How do I access my counselor?
+        <ul class="FAQ">
+          <li>You can either click the link at the bottom of this page or click this link: <a class="text-black" href="https://sites.google.com/ftcsc.org/fchs-course-guide-2026-2027/fchs-general-information">Counselors</a>.</li>
+        </ul>
+      </div><br>
   </div>
 
   <script>
-    let Long = document.getElementById("Long");
-    let Many = document.getElementById("Many");
-    let Password = document.getElementById("Password");
-    let See = document.getElementById("See");
-    let Saved = document.getElementById("Saved");
-    let Filter = document.getElementById("Filter");
-    let Access = document.getElementById("Access");
+    let items = document.querySelectorAll(".Question");
 
-    Long.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    Many.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    Password.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    See.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    Saved.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    Filter.addEventListener("click", function() {
-      this.classList.toggle("open");
-    });
-    Access.addEventListener("click", function() {
-      this.classList.toggle("open");
+    items.forEach(item => {
+      item.addEventListener("click", function() {
+        items.forEach(otherItem => {
+          if (otherItem !== this) {
+            otherItem.classList.remove("open");
+          }
+        });
+
+        this.classList.toggle("open");
+      });
     });
   </script>
 
