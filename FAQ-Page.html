@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <title>FAQ Page</title>
+
+  <style>
+    html, body{
+      height: 100%;
+      margin: 0;
+    }
+
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      grid-template-rows: 1fr auto;
+    }
+
+    main{
+      flex-grow:1;
+      padding: 20px
+    }
+
+    header, footer{
+      display:flex;
+      flex-direction: column;
+      min-height: 100px;
+    }
+
+    .site-main{
+      flex-grow: 1;
+    }
+
+    button{
+      width: 125px;
+      height: 75px;
+      margin: 1em;
+    }
+    
+    button:hover{
+      background-color: #e0e0e0;
+    }
+
+    button:active{
+      background-color: #c0c0c0;
+    }
+
+    button#login{
+      width: 75px;
+      height: 45px;
+      margin: 1em;
+    }
+
+    div#Long, #Many, #Password, #See, #Saved, #Filter, #Access{
+      position: relative;
+      left: 20%;
+      width: 60vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+      margin-top: 5px;
+      padding: 5px;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    ul.FAQ{
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.6s ease;
+      list-style: none;
+      padding: 0;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    div.open ul {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <div class="row bg-primary align-items-center justify-content-center">
+    <nav class="navbar navbar-expand navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.ftcsc.org/article/2646895"><img src="https://cmsv2-assets.apptegy.net/uploads/27023/logo/29836/FranklinTownship_web.png" alt="" width="300px"></a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="nav-link"><a class="text-black" href="#">Home</a></button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link"><a class="text-black" href="#">Survey</a></button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link active"><a class="text-black" href="#">FAQ</a></button>
+          </li>
+        </ul>
+        <button id="login" class="nav-item">Login</button>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="site-main container-fluid">
+      <h1 class="text-center">Frequently Asked Questions</h1>
+      <p class="text-center">Here are some of the most frequently asked questions about the counselor recommendation survey. Click on a question to see the answer.</p>
+
+      <div class="Question" id="Long">How long does the survey take?
+        <ul class="FAQ">
+          <li>The survey typically takes about 5-10 minutes to complete. Once you finish, you will get a wide variety of recommendations personalized for you.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Many">How many recommendation options are there?
+        <ul class="FAQ">
+          <li>There are about 20 counseling recommendations available based on your survey responses.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Password">Do I need a password to access the survey?
+        <ul class="FAQ">
+          <li>No, you do not need a password to access the survey. You can access it directly from the main page.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Saved">Can I save my recommendations?
+        <ul class="FAQ">
+          <li><strong>Yes</strong>, you can save your recommendations for future reference. This allows you to easily access and review them at any time.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "See">Who can see my saved recommendations?
+        <ul class="FAQ">
+          <li>Your saved recommendations can be viewed by you, your parents, and your counselor.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Filter">Can I filter out options I don't want?
+        <ul class="FAQ">
+          <li><strong>Yes</strong>, you are able to filter out options you are not interested in by finding the filter button and entering your preferences.</li>
+        </ul>
+      </div><br>
+
+      <div class="Question" id = "Access">How do I access my counselor?
+        <ul class="FAQ">
+          <li>You can either click the link at the bottom of this page or click this link: <a class="text-black" href="https://sites.google.com/ftcsc.org/fchs-course-guide-2026-2027/fchs-general-information">Counselors</a>.</li>
+        </ul>
+      </div><br>
+  </div>
+
+  <script>
+    let items = document.querySelectorAll(".Question");
+
+    items.forEach(item => {
+      item.addEventListener("click", function() {
+        items.forEach(otherItem => {
+          if (otherItem !== this) {
+            otherItem.classList.remove("open");
+          }
+        });
+
+        this.classList.toggle("open");
+      });
+    });
+  </script>
+
+  <footer>
+    <div class="row h-100 bg-primary d-flex align-items-center justify-content-center">
+      <div class="pt-1 pb-2 ps-2 pe-4 col-md-5">
+        <h5 class="text-white">Franklin Central High School Counseling Services</h5><br>
+        <h6 class="text-white">Franklin Central High School Counselor Recommender</h6>
+      </div>
+      <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+        <h6><strong>Related</strong></h6>
+        <a>Placeholder</a>
+        <a>Placeholder</a>
+        <a>Placeholder</a>
+      </div>
+      <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+        <h6><strong>Learn More</strong></h6>
+        <a>Placeholder</a>
+        <a>Course Guide</a>
+        <a>Placeholder</a>
+      </div>
+      <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+        <h6><strong>Support</strong></h6>
+        <a>Request a Counselor</a>
+        <a>Contact Information</a>
+      </div>
+    </div>
+  </footer>
+</main>
+</body>
+</html>
