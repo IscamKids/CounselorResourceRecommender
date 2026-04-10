@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Bootstrap Icons CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid ps-3">
+            <h1 class="text-center">Counselling Survey</h1><br>
+            <p class="text-center">Please finish this survey to find the right counselor for you.</p><hr>
+            <form id="surveyForm" action="/meetCounselor" method="post">
+            
+                <!--Question 1 -->
+                <p><strong>What grade are you currently in?</strong></p><br>
+                <input type="radio" id="grade1" name="baseQuestion" value="1">
+                <label for="grade1">9th Grade</label><br>
+                <input type="radio" id="grade2" name="baseQuestion" value="2">
+                <label for="grade2">10th Grade</label><br>
+                <input type="radio" id="grade3" name="baseQuestion" value="3">
+                <label for="grade3">11th Grade</label><br>
+                <input type="radio" id="grade4" name="baseQuestion" value="4">
+                <label for="grade4">12th Grade</label><br><hr>
+
+                <!--Question 2 -->
+                <p><strong>What do you plan on doing past high school?</strong></p><br>
+                <input type="radio" id="plan1" name="baseQuestion" value="1">
+                <label for="plan1">Seeking further education; College</label><br>
+                <input type="radio" id="plan2" name="baseQuestion" value="2">
+                <label for="plan2">Seeking further education; Trade school</label><br>
+                <input type="radio" id="plan3" name="baseQuestion" value="3">
+                <label for="plan3">Entering the workforce</label><br>
+                <input type="radio" id="plan4" name="baseQuestion" value="4">
+                <label for="plan4">Enlist in the military</label><br>
+                <input type="radio" id="plan5" name="baseQuestion" value="5">
+                <label for="plan5">Unsure</label><br><hr>
+
+                <!--Question 3-->
+                <p><strong>What do you need help with related to graduation?</strong></p><br>
+                <input type="radio" id="help1" name="baseQuestion" value="1">
+                <label for="help1">Worried about requirements</label><br>
+                <input type="radio" id="help2" name="baseQuestion" value="2">
+                <label for="help2">Not familiar with the process</label><br>
+                <input type="radio" id="help3" name="baseQuestion" value="3">
+                <label for="help3">Discuss different graduation diplomas</label><br><br>
+
+                <!--Question 4-->
+                <p><strong>Is there anything else you would like to share about your counseling needs?</strong></p>
+                <input type="text" id="FRQ1" name="FRQ" class="form-control"><br>
+                
+
+                <!--Submit Button-->
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+        
+        <script>
+            function assignCounselor() {
+                // Placeholder for counselor assignment logic
+            }
+        </script>
+    </body>
+</html>
