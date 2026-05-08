@@ -98,6 +98,7 @@
                 <input type="text" id="firstname" name="firstname" class="form-control"><br>
                 <p><strong>Last name</strong></p>
                 <input type="text" id="lastname" name="lastname" class="form-control"><br>
+
                 <p><strong>Grade</strong></p>
                 <input type="radio" id="grade1" name="grade">
                 <label for="grade1">9th Grade</label><br>
@@ -118,7 +119,7 @@
                 <label for="baseQuestion3">Graduation preparation</label><br><hr>
 
                 <!--Submit Button-->
-                <input type="submit" value="Submit" class="btn btn-primary" onClick="assignPath()">
+                <input type="button" value="Submit" class="btn btn-primary" onClick="assignPath()">
             </form>
         </div><br><br>
 
@@ -150,18 +151,24 @@
         
         <script>
             function assignPath() {
-                // Get the value of the base question
-                var baseQuestionValue = document.querySelector('input[name="baseQuestion"]:checked').value;
+                // 1. Find the checked radio button
+                var selected = document.querySelector('input[name="baseQuestion"]:checked');
 
-                // Redirect to the appropriate path based on the value
-                if (baseQuestionValue === "1") {
-                    window.location.href = "/Path1Survey";
-                }
-                else if (baseQuestionValue === "2") {
-                    window.location.href = "/Path2Survey";
-                }
-                else if (baseQuestionValue === "3") {
-                    window.location.href = "/Path3Survey";
+                // 2. Check if the user actually picked something
+                if (selected) {
+                    var baseQuestionValue = selected.value;
+
+                    // 3. Perform redirection
+                    if (baseQuestionValue == "1") {
+                        window.location.href = "Path1Survey.html";
+                    } else if (baseQuestionValue == "2") {
+                        window.location.href = "Path2Survey.html";
+                    } else if (baseQuestionValue == "3") {
+                        window.location.href = "Path3Survey.html";
+                    }
+                } else {
+                    // 4. Alert the user if they forgot to pick an option
+                    alert("Please select an option before submitting.");
                 }
             }
         </script>

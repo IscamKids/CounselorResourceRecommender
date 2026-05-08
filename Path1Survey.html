@@ -20,60 +20,62 @@
             <form id="surveyForm" action="/meetCounselor" method="post">
                 
                 <!--Question 1 -->
-                <p><strong>Have you tried seeking resources before?</strong></p><br>
-                <input type="radio" id="seeking1" name="baseQuestion" value="1">
+                <p><strong>Have you tried seeking resources before?</strong></p>
+                <input type="radio" id="seeking1" name="q1" value="1">
                 <label for="seeking1">Yes, I have frequently in the past</label><br>
-                <input type="radio" id="seeking2" name="baseQuestion" value="2">
+                <input type="radio" id="seeking2" name="q1" value="2">
                 <label for="seeking2">Yes, once or infrequently in the past</label><br>
-                <input type="radio" id="seeking3" name="baseQuestion" value="3">
+                <input type="radio" id="seeking3" name="q1" value="3">
                 <label for="seeking3">No, never before</label><br>
-                <input type="radio" id="seeking4" name="baseQuestion" value="4">
-                <label for="seeking4">No, though I've been recommended to</label><br><hr>
+                <input type="radio" id="seeking4" name="q1" value="4">
+                <label for="seeking4">No, though I've been recommended to</label><br>
+                <hr>
 
-                <!--Question 2 -->
-                <p><strong>How familiar are you with FC's counselling system?</strong></p><br>
-                <input type="radio" id="familiar1" name="baseQuestion" value="1">
+                <!--Question 2 (Fixed name="q2" and added missing id to label) -->
+                <p><strong>How familiar are you with FC's counselling system?</strong></p>
+                <input type="radio" id="familiar1" name="q2" value="1">
                 <label for="familiar1">I've bounced around a lot</label><br>
-                <input type="radio" id="familiar2" name="baseQuestion" value="2">
+                <input type="radio" id="familiar2" name="q2" value="2">
                 <label for="familiar2">Maybe once or twice</label><br>
-                <input type="radio" id="familiar3" name="baseQuestion" value="3">
+                <input type="radio" id="familiar3" name="q2" value="3">
                 <label for="familiar3">I've spent a decent amount of time in there</label><br>
-                <input type="radio" id="familiar4" name="baseQuestion" value="4">
-                <label for="familiar4">I'm new to FC</label><br><hr>
+                <input type="radio" id="familiar4" name="q2" value="4">
+                <label for="familiar4">I'm new to FC</label><br>
+                <hr>
 
                 <!--Question 3 -->
                 <p><strong>Have you sought external resources of counseling?</strong></p><br>
-                <input type="radio" id="external1" name="baseQuestion" value="1">
+                <input type="radio" id="external1" name="question3" value="1">
                 <label for="external1">Yes, I have frequently in the past</label><br>
-                <input type="radio" id="external2" name="baseQuestion" value="2">
+                <input type="radio" id="external2" name="question3" value="2">
                 <label for="external2">Yes, once or infrequently in the past</label><br>
-                <input type="radio" id="external3" name="baseQuestion" value="3">
+                <input type="radio" id="external3" name="question3" value="3">
                 <label for="external3">Yes, and I still currently use such resources</label><br>
-                <input type="radio" id="external4" name="baseQuestion" value="4">
+                <input type="radio" id="external4" name="question3" value="4">
                 <label for="external4">No, never before</label><br>
-                <input type="radio" id="external5" name="baseQuestion" value="5">
+                <input type="radio" id="external5" name="question3" value="5">
                 <label for="external5">I've looked, but couldn't find one that fit me</label><br><hr>
             
                 <!--Question 4 -->
                 <p><strong>Do you feel comfortable sharing your situation with a loved one?</strong></p><br>
-                <input type="radio" id="loved1" name="baseQuestion" value="1">
+                <input type="radio" id="loved1" name="question4" value="1">
                 <label for="loved1">Yes</label><br>
-                <input type="radio" id="loved2" name="baseQuestion" value="2">
+                <input type="radio" id="loved2" name="question4" value="2">
                 <label for="loved2">No</label><br>
-                <input type="radio" id="loved3" name="baseQuestion" value="3">
+                <input type="radio" id="loved3" name="question4" value="3">
                 <label for="loved3">Maybe</label><br>
-                <input type="radio" id="loved4" name="baseQuestion" value="4">
+                <input type="radio" id="loved4" name="question4" value="4">
                 <label for="loved4">Probably not</label><br><hr>
 
                 <!--Question 5 -->
                 <p><strong>Do you feel comfortable sharing your situation with a licensed professional?</strong></p><br>
-                <input type="radio" id="professional1" name="baseQuestion" value="1">
+                <input type="radio" id="professional1" name="question5" value="1">
                 <label for="professional1">Yes</label><br>
-                <input type="radio" id="professional2" name="baseQuestion" value="2">
+                <input type="radio" id="professional2" name="question5" value="2">
                 <label for="professional2">No</label><br>
-                <input type="radio" id="professional3" name="baseQuestion" value="3">
+                <input type="radio" id="professional3" name="question5" value="3">
                 <label for="professional3">Maybe</label><br>
-                <input type="radio" id="professional4" name="baseQuestion" value="4">
+                <input type="radio" id="professional4" name="question5" value="4">
                 <label for="professional4">Probably not</label><br><br>
 
                 <!--Question 6-->
@@ -82,7 +84,7 @@
                 
 
                 <!--Submit Button-->
-                <input type="submit" value="Submit" class="btn btn-primary" >
+                <input type="button" value="Submit" class="btn btn-primary" onClick="assignCounselor()">
             </form>
         </div>
         
