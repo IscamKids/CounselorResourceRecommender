@@ -73,15 +73,18 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="https://www.ftcsc.org/article/2646895"><img src="https://cmsv2-assets.apptegy.net/uploads/27023/logo/29836/FranklinTownship_web.png" alt="" width="300px"></a>
                  <ul class="navbar-nav">
-                 <li class="nav-item">
-                    <a class="nav-link btn btn-light text-black" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-light text-black active" href="survey.html">Survey</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-light text-black" href="FAQ-Page.html">FAQ</a>
-                </li>
+                     <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black active" href="survey.html">Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black" href="FAQ-Page.html">FAQ</a>
+                    </li>
+                     <li class="nav-item">
+                         <a class="nav-link btn btn-light text-black" href="meetCounselor.html">Counselor Info</a>
+                     </li>
                 </ul>
                  <a class="nav-link btn btn-light text-black" href="login.html">Login</a>
             </div>
@@ -151,14 +154,11 @@
         
         <script>
             function assignPath() {
-                // 1. Find the checked radio button
                 var selected = document.querySelector('input[name="baseQuestion"]:checked');
 
-                // 2. Check if the user actually picked something
                 if (selected) {
                     var baseQuestionValue = selected.value;
 
-                    // 3. Perform redirection
                     if (baseQuestionValue == "1") {
                         window.location.href = "Path1Survey.html";
                     } else if (baseQuestionValue == "2") {
@@ -167,7 +167,6 @@
                         window.location.href = "Path3Survey.html";
                     }
                 } else {
-                    // 4. Alert the user if they forgot to pick an option
                     alert("Please select an option before submitting.");
                 }
             }
