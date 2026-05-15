@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Survey Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Bootstrap Icons CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <style>
+            html, body{
+            height: 100%;
+            margin: 0;
+            }
+
+            body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            grid-template-rows: 1fr auto;
+            }
+
+            main{
+            flex-grow:1;
+            padding: 20px
+            }
+
+            header, footer{
+            display:flex;
+            flex-direction: column;
+            min-height: 100px;
+            }
+
+            .site-main{
+            flex-grow: 1;
+            }
+
+            .nav-link{
+            width: 125px;
+            height: 75px;
+            margin: 1em;
+            }
+            
+            .nav-link:hover{
+            background-color: #e0e0e0;
+            }
+
+            .nav-link:active{
+            background-color: #c0c0c0;
+            }
+
+            .nav-link#login{
+            width: 75px;
+            height: 45px;
+            margin: 1em;
+            }
+
+            a{
+            text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="row bg-primary align-items-center justify-content-center">
+        <nav class="navbar navbar-expand navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://www.ftcsc.org/article/2646895"><img src="https://cmsv2-assets.apptegy.net/uploads/27023/logo/29836/FranklinTownship_web.png" alt="" width="300px"></a>
+                 <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black active" href="survey.html">Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-black" href="FAQ-Page.html">FAQ</a>
+                    </li>
+                     <li class="nav-item">
+                         <a class="nav-link btn btn-light text-black" href="meetCounselor.html">Counselor Info</a>
+                     </li>
+                </ul>
+                 <a class="nav-link btn btn-light text-black" href="login.html">Login</a>
+            </div>
+        </nav>
+    </div>
+
+        <div class="container-fluid ps-3">
+            <h1 class="text-center">Which counselor is right for you?</h1><br>
+            <p class="text-center">Take this quiz to find out.</p><hr>
+            <form id="surveyForm" action="/meetCounselor" method="post">
+                
+                <!--Ask for name and grade-->
+                <p><strong>First name</strong></p>
+                <input type="text" id="firstname" name="firstname" class="form-control"><br>
+                <p><strong>Last name</strong></p>
+                <input type="text" id="lastname" name="lastname" class="form-control"><br>
+
+                <p><strong>Grade</strong></p>
+                <input type="radio" id="grade1" name="grade">
+                <label for="grade1">9th Grade</label><br>
+                <input type="radio" id="grade2" name="grade">
+                <label for="grade2">10th Grade</label><br>
+                <input type="radio" id="grade3" name="grade">
+                <label for="grade3">11th Grade</label><br>
+                <input type="radio" id="grade4" name="grade">
+                <label for="grade4">12th Grade</label><br><hr>
+
+                <!--Base question -->
+                <p><strong>What are you seeking counseling for?</strong></p><br>
+                <input type="radio" id="baseQuestion1" name="baseQuestion" value="1">
+                <label for="baseQuestion1">A personal problem</label><br>
+                <input type="radio" id="baseQuestion2" name="baseQuestion" value="2">
+                <label for="baseQuestion2">General counseling</label><br>
+                <input type="radio" id="baseQuestion3" name="baseQuestion" value="3">
+                <label for="baseQuestion3">Graduation preparation</label><br><hr>
+
+                <!--Submit Button-->
+                <input type="button" value="Submit" class="btn btn-primary" onClick="assignPath()">
+            </form>
+        </div><br><br>
+
+        <footer>
+            <div class="row h-100 bg-primary d-flex align-items-center justify-content-center">
+            <div class="pt-1 pb-2 ps-2 pe-4 col-md-5">
+                <h5 class="text-white">Franklin Central High School Counseling Services</h5><br>
+                <h6 class="text-white">Franklin Central High School Counselor Recommender</h6>
+            </div>
+            <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+                <h6><strong>Related</strong></h6>
+                <a>Placeholder</a><br>
+                <a>Placeholder</a><br>
+                <a>Placeholder</a>
+            </div>
+            <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+                <h6><strong>Learn More</strong></h6>
+                <a>Placeholder</a><br>
+                <a>Course Guide</a><br>
+                <a>Placeholder</a>
+            </div>
+            <div class="pt-1 pb-2 ps-2 pe-4 col-md-2 text-white">
+                <h6><strong>Support</strong></h6>
+                <a>Request a Counselor</a><br>
+                <a>Contact Information</a>
+            </div>
+            </div>
+        </footer>
+        
+        <script>
+            function assignPath() {
+                var selected = document.querySelector('input[name="baseQuestion"]:checked');
+
+                if (selected) {
+                    var baseQuestionValue = selected.value;
+
+                    if (baseQuestionValue == "1") {
+                        window.location.href = "Path1Survey.html";
+                    } else if (baseQuestionValue == "2") {
+                        window.location.href = "Path2Survey.html";
+                    } else if (baseQuestionValue == "3") {
+                        window.location.href = "Path3Survey.html";
+                    }
+                } else {
+                    alert("Please select an option before submitting.");
+                }
+            }
+        </script>
+    </body>
+</html>
