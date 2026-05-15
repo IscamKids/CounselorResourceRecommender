@@ -21,35 +21,35 @@
             
                 <!--Question 1 -->
                 <p><strong>What grade are you currently in?</strong></p><br>
-                <input type="radio" id="grade1" name="baseQuestion" value="1">
+                <input type="radio" id="grade1" name="s3q1" value="1">
                 <label for="grade1">9th Grade</label><br>
-                <input type="radio" id="grade2" name="baseQuestion" value="2">
+                <input type="radio" id="grade2" name="s3q1" value="2">
                 <label for="grade2">10th Grade</label><br>
-                <input type="radio" id="grade3" name="baseQuestion" value="3">
+                <input type="radio" id="grade3" name="s3q1" value="3">
                 <label for="grade3">11th Grade</label><br>
-                <input type="radio" id="grade4" name="baseQuestion" value="4">
+                <input type="radio" id="grade4" name="s3q1" value="4">
                 <label for="grade4">12th Grade</label><br><hr>
 
                 <!--Question 2 -->
                 <p><strong>What do you plan on doing past high school?</strong></p><br>
-                <input type="radio" id="plan1" name="baseQuestion" value="1">
+                <input type="radio" id="plan1" name="s3q2" value="1">
                 <label for="plan1">Seeking further education; College</label><br>
-                <input type="radio" id="plan2" name="baseQuestion" value="2">
+                <input type="radio" id="plan2" name="s3q2" value="2">
                 <label for="plan2">Seeking further education; Trade school</label><br>
-                <input type="radio" id="plan3" name="baseQuestion" value="3">
+                <input type="radio" id="plan3" name="s3q2" value="3">
                 <label for="plan3">Entering the workforce</label><br>
-                <input type="radio" id="plan4" name="baseQuestion" value="4">
+                <input type="radio" id="plan4" name="s3q2" value="4">
                 <label for="plan4">Enlist in the military</label><br>
-                <input type="radio" id="plan5" name="baseQuestion" value="5">
+                <input type="radio" id="plan5" name="s3q2" value="5">
                 <label for="plan5">Unsure</label><br><hr>
 
                 <!--Question 3-->
                 <p><strong>What do you need help with related to graduation?</strong></p><br>
-                <input type="radio" id="help1" name="baseQuestion" value="1">
+                <input type="radio" id="help1" name="s3q3" value="1">
                 <label for="help1">Worried about requirements</label><br>
-                <input type="radio" id="help2" name="baseQuestion" value="2">
+                <input type="radio" id="help2" name="s3q2" value="2">
                 <label for="help2">Not familiar with the process</label><br>
-                <input type="radio" id="help3" name="baseQuestion" value="3">
+                <input type="radio" id="help3" name="s3q2" value="3">
                 <label for="help3">Discuss different graduation diplomas</label><br><br>
 
                 <!--Question 4-->
@@ -64,7 +64,49 @@
         
         <script>
             function assignCounselor() {
-                window.location.href = "recommendedCouselor.html";
+
+                var selected = document.querySelector('input[name="s3q1"]:checked');
+
+                if (selected) {
+
+                    var s3q1Value = selected.value;
+
+                    if (s3q1Value == "1") {
+
+                        localStorage.setItem("counselorName", "Mrs. Ainsley Flannery");
+                        localStorage.setItem("counselorEmail", "ainsley.flannery@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5548");
+
+                    }
+                    else if (s3q1Value == "2") {
+
+                        localStorage.setItem("counselorName", "Mrs. Sharson Jinks");
+                        localStorage.setItem("counselorEmail", "sharson.jinks@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5534");
+
+                    }
+                    else if (s3q1Value == "3") {
+
+                        localStorage.setItem("counselorName", "Mrs. Jansen Lines");
+                        localStorage.setItem("counselorEmail", "jansen.lines@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5694");
+
+                    }
+                    else if (s3q1Value == "4") {
+
+                        localStorage.setItem("counselorName", "Mrs. Corinna Vonderwell");
+                        localStorage.setItem("counselorEmail", "corinna.vonderwell@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5777");
+
+                    }
+
+                    window.location.href = "recommendedCounselor.html";
+
+                } else {
+
+                    alert("Please select an option before submitting.");
+
+                }
             }
         </script>
     </body>

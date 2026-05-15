@@ -21,13 +21,13 @@
                 
                 <!--Question 1 -->
                 <p><strong>Have you tried seeking resources before?</strong></p>
-                <input type="radio" id="seeking1" name="q1" value="1">
+                <input type="radio" id="seeking1" name="s1q1" value="1">
                 <label for="seeking1">Yes, I have frequently in the past</label><br>
-                <input type="radio" id="seeking2" name="q1" value="2">
+                <input type="radio" id="seeking2" name="s1q1" value="2">
                 <label for="seeking2">Yes, once or infrequently in the past</label><br>
-                <input type="radio" id="seeking3" name="q1" value="3">
+                <input type="radio" id="seeking3" name="s1q1" value="3">
                 <label for="seeking3">No, never before</label><br>
-                <input type="radio" id="seeking4" name="q1" value="4">
+                <input type="radio" id="seeking4" name="s1q1" value="4">
                 <label for="seeking4">No, though I've been recommended to</label><br>
                 <hr>
 
@@ -90,7 +90,44 @@
         
         <script>
             function assignCounselor() {
-                window.location.href = "recommendedCouselor.html";
+                var selected = document.querySelector('input[name="s1q1"]:checked');
+
+                if (selected) {
+                    var s1q1Value = selected.value;
+
+                    if (s1q1Value == "1") {
+
+                        localStorage.setItem("counselorName", "Mr. Tim Siegert");
+                        localStorage.setItem("counselorEmail", "timothy.siegert@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5660");
+
+                    }
+                    else if (s1q1Value == "2") {
+
+                        localStorage.setItem("counselorName", "Mrs. Tami Jacobs");
+                        localStorage.setItem("counselorEmail", "tami.jacobs@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5542");
+
+                    }
+                    else if (s1q1Value == "3") {
+
+                        localStorage.setItem("counselorName", "Mrs. Rebecca Fledderman");
+                        localStorage.setItem("counselorEmail", "rebecca.fledderman@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5787");
+
+                    }
+                    else if (s1q1Value == "4") {
+
+                        localStorage.setItem("counselorName", "Mrs. Erin Levins");
+                        localStorage.setItem("counselorEmail", "erin.levins@ftcsc.org");
+                        localStorage.setItem("counselorPhone", "317-803-5642");
+
+                    }
+
+                    window.location.href = "recommendedCounselor.html";
+                } else {
+                    alert("Please select an option before submitting.");
+                }
             }
         </script>
     </body>
